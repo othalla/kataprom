@@ -1,0 +1,29 @@
+---
+swagger: "2.0"
+
+info:
+  title: "{{title}}"
+  version: "1.0"
+
+basePath: /v0
+
+paths:
+  /greeting/{name}:
+    post:
+      operationId: app.post_greeting
+      summary: Generate greeting
+      description: Generates a greeting message.
+      produces:
+        - text/plain;
+      responses:
+        200:
+          description: greeting response
+          schema:
+            type: string
+          examples:
+            "text/plain": "Hello John"
+      parameters:
+        - name: name
+          in: path
+          type: string
+          required: true
